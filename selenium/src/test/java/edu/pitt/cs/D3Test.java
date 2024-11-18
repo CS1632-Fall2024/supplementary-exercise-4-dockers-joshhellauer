@@ -42,14 +42,18 @@ public class D3Test {
 
   @Before
   public void setUp() {
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--headless=old"); // Enable running without a display
-    options.addArguments("--disable-notifications");
-    options.addArguments("--disable-dev-shm-usage");
-    options.addArguments("--no-sandbox");
+    // ChromeOptions options = new ChromeOptions();
+    // options.addArguments("--headless=old"); // Enable running without a display
+    // options.addArguments("--disable-notifications");
+    // options.addArguments("--disable-dev-shm-usage");
+    // options.addArguments("--no-sandbox");
 
+    // driver = new ChromeDriver(options);
+    // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--headless");
     driver = new ChromeDriver(options);
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
 
